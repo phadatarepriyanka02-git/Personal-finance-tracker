@@ -1,0 +1,19 @@
+ <form [formGroup]="registrationForm" (ngSubmit)="registrationForm.valid && onRegister()" class="form-group p-2">
+
+                <input type="text" name="name" id="fname" placeholder="Full name" class="form-control"formControlName="name" >
+            
+                <input type="email" name="username" id="femail" placeholder="Username" class="form-control" [ngClass]="{'is-invalid':registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched}" formControlName="username">
+                <ng-container *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+                    <p class="text-danger" *ngIf="registrationForm.get('email')?.errors?.['required']">Email is required</p>
+                    <p class="text-danger" *ngIf="registrationForm.get('email')?.errors?.['email']">Please enter a vaild email</p>
+                </ng-container>
+        
+                <input type="password" name="password" id="fpass" placeholder="Password" class="form-control mt-2" formControlName="password" [ngClass]="{'is-invalid':registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched}">
+                <p class="text-danger" *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">Password is required</p>
+                
+                <input type="password" name="confirmPassword" id="fconfirmpass" placeholder="Re Enter Password" class="form-control mt-2" formControlName="confirmPassword">
+
+                <button class="btn btn-info w-100 mt-2">Register</button>
+                
+                
+ </form>

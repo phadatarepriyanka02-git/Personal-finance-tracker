@@ -1,0 +1,20 @@
+<h1 class="text-center text-info">Dashboard</h1>
+<app-card></app-card>
+<div class="row mt-5">
+
+     <div class="col-7 border">
+          <app-analystics-chart  [data]="expensesData"></app-analystics-chart>
+     </div>
+
+          <div class="col-4 border ms-2">
+               <div *ngFor="let item of history" class="d-flex">
+                    <h6>{{item.description}}</h6>
+                    <h6 *ngIf="item.category=='Income';else elseBlock">+ {{item.amount}}</h6>
+                    <ng-template #elseBlock>
+                         <h6> - {{item.amount}}</h6>
+                    </ng-template>
+               </div>
+          </div>
+
+
+</div>

@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "priyanka@gmail.com",
+      "password": "hashed123",
+      "name": "Priyanka Phadatare"
+    },
+    {
+      "id": "388e",
+      "name": "Tejas Phadatare",
+      "username": "abc@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "0cb3",
+      "name": "Prathamesh Phadatare",
+      "username": "xyz@gmail.com",
+      "password": "567"
+    },
+    {
+      "id": "3ed0",
+      "name": "Aaditya Phadatrae",
+      "username": "kjdkskaj@gmail.com",
+      "password": "97987"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "2",
+      "userId": "1",
+      "amount": 2000,
+      "date": "2025-09-26",
+      "category": "Expense",
+      "description": "Groceries"
+    },
+    {
+      "id": "3",
+      "userId": "2",
+      "amount": 2000,
+      "date": "2025-09-26",
+      "category": "Expense",
+      "description": "Groceries"
+    },
+    {
+      "id": "3",
+      "userId": "1",
+      "amount": 800,
+      "date": "2025-09-20",
+      "category": "Expense",
+      "description": "Electricity Bill"
+    },
+    {
+      "id": "4",
+      "userId": "1",
+      "amount": 1500,
+      "date": "2025-09-22",
+      "category": "Expense",
+      "description": "Restaurant"
+    },
+    {
+      "id": "5",
+      "userId": "1",
+      "amount": 1200,
+      "date": "2025-09-23",
+      "category": "Expense",
+      "description": "Fuel"
+    },
+    {
+      "id": "6",
+      "userId": "1",
+      "amount": 2000,
+      "date": "2025-09-15",
+      "category": "Income",
+      "description": "Freelance Project"
+    },
+    {
+      "id": "7",
+      "userId": "1",
+      "amount": 700,
+      "date": "2025-09-10",
+      "category": "Expense",
+      "description": "Internet Bill"
+    },
+    {
+      "id": "8",
+      "userId": "1",
+      "amount": 1000,
+      "date": "2025-09-05",
+      "category": "Expense",
+      "description": "Shopping"
+    },
+    {
+      "id": "9",
+      "userId": "1",
+      "amount": 3000,
+      "date": "2025-08-28",
+      "category": "Income",
+      "description": "Bonus"
+    },
+    {
+      "id": "10",
+      "userId": "1",
+      "amount": 400,
+      "date": "2025-08-30",
+      "category": "Expense",
+      "description": "Snacks & Coffee"
+    }
+  ]
+}
