@@ -1,7 +1,12 @@
 <div class=" text-center">
     <h1 class="text-info">All Transaction</h1>
 
-    <table class="table table-bordered">
+
+    <div class="mb-3">
+ <input type="text" class="form-control" placeholder="Search..." (ngModelChange)="debouncedSearch($event)" [(ngModel)]="searchTerm">
+</div>
+
+      <table class="table table-bordered">
         <tr>
             <td *ngFor="let head of headers">{{head}}</td>
             <td> 
@@ -10,7 +15,7 @@
                 </button>
             </td>
         </tr>
-        <tr *ngFor="let item of allTransactions">
+        <tr *ngFor="let item of filteredTransactions()">
             <td>{{item.id}}</td>
             <td>{{item.userId}}</td>
             <td>{{item.amount}}</td>
@@ -22,7 +27,48 @@
                 <button class="btn btn-dark" (click)="onDelete(item)">Delete</button>
             </td>
         </tr>
+
+        
+     
+
+      
     </table>
+
+       <div class="d-flex justify-content-center w-100">
+        <div class="text-center">
+
+        <select name="items" [(ngModel)]="itemsPerPage" (change)="onSelectChange(itemsPerPage)">
+            <option>3</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+        </select>
+        <button class="btn btn-info m-2" (click)="backwardClick()" [disabled]="startIndex==0">
+            <</button>
+                <div *ngFor="let page of PagesArray" class="d-inline ">
+                    <button class=" d-inline" [ngClass]="page==counter?'btn btn-info':'btn btn-light'"
+                        (click)="executeFn(page)">{{page}}</button>
+                </div>
+        <button class="btn btn-info m-2" (click)="forwardclick()" [disabled]="initialData?.length<itemsPerPage || endIndex==allTransactions.length"> >
+
+        </button>
+
+                    
+        </div>
+        </div>
+
+
+
+
+   
+
+
+   
+
+
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="transactionModal" tabindex="-1" aria-hidden="true">
@@ -57,8 +103,8 @@
             </div>
 
             <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="onUpdate()" >Update</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" *ngIf="!showupdate">Save</button>
+            <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="onUpdate()" *ngIf="showupdate">Update</button>
             </div>
     
             </form>

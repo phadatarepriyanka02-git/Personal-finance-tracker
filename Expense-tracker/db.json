@@ -27,20 +27,12 @@
   ],
   "transactions": [
     {
-      "id": "2",
-      "userId": "1",
-      "amount": 2000,
-      "date": "2025-09-26",
-      "category": "Expense",
-      "description": "Groceries"
-    },
-    {
       "id": "3",
-      "userId": "2",
-      "amount": 2000,
-      "date": "2025-09-26",
+      "userId": "1",
+      "amount": 80,
+      "date": "2025-09-20",
       "category": "Expense",
-      "description": "Groceries"
+      "description": "Electricity Bill"
     },
     {
       "id": "3",
@@ -105,6 +97,14 @@
       "date": "2025-08-30",
       "category": "Expense",
       "description": "Snacks & Coffee"
+    },
+    {
+      "id": "ff19",
+      "userId": "1",
+      "amount": 9789,
+      "date": "2025-09-10",
+      "category": "Income",
+      "description": "ugjgku"
     }
   ]
 }
